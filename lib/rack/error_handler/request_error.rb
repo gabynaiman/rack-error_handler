@@ -8,6 +8,7 @@ module Rack
       end
 
       def message
+        request.body.rewind
         [
           "#{request.request_method} #{request.path}",
           "Query: \"#{request.query_string}\"",
